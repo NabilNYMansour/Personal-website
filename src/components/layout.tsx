@@ -14,11 +14,12 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ShaderToyIcon from "../icons/shaderToyIcon";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
-import { CssBaseline, Tooltip, createTheme } from "@mui/material";
+import { CssBaseline, Tooltip } from "@mui/material";
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { ThemeProvider, useTheme } from "@emotion/react";
+import { ThemeProvider } from "@emotion/react";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { darkTheme, lightTheme } from "../themes/themes";
 
 const pages = [
   {
@@ -68,33 +69,6 @@ const contacts = [
   },
 ];
 
-// Theming
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-  typography: {
-    fontFamily: ["Courier", "monospace"].join(","),
-  },
-});
-
-darkTheme.typography.body1 = {
-  [darkTheme.breakpoints.down("md")]: {
-    fontSize: "95%",
-  },
-};
-
-const lightTheme = createTheme({
-  palette: {
-    mode: "light",
-  },
-  typography: {
-    fontFamily: ["Courier", "monospace"].join(","),
-  },
-});
-
-lightTheme.typography.body1 = darkTheme.typography.body1
-
 export default function Layout() {
   const location = useLocation();
   const [currTheme, setCurrTheme] = React.useState(lightTheme);
@@ -118,7 +92,6 @@ export default function Layout() {
     } else {
       setCurrTheme(darkTheme);
     }
-    console.log(currTheme.palette.mode);
   };
 
   return (
@@ -135,6 +108,7 @@ export default function Layout() {
                   display: { xs: "flex", md: "none" },
                 }}
               >
+                {/* Pages */}
                 <IconButton
                   aria-label="menu"
                   aria-controls="menu-appbar"
@@ -142,7 +116,7 @@ export default function Layout() {
                   onClick={handleOpenNavMenu}
                   sx={{
                     my: 2,
-                    color: "white",
+                    color: "inherit",
                   }}
                 >
                   <MenuIcon />
@@ -194,7 +168,7 @@ export default function Layout() {
                         rel="noreferrer"
                         sx={{
                           my: 2,
-                          color: "white",
+                          color: "inherit",
                         }}
                         onClick={handleCloseNavMenu}
                         aria-label={contact.title}
@@ -205,6 +179,7 @@ export default function Layout() {
                   ))}
                 </Box>
 
+                {/* Theme Toggle */}
                 <Box
                   sx={{
                     flexGrow: 1,
@@ -212,22 +187,23 @@ export default function Layout() {
                     justifyContent: "right",
                   }}
                 >
-                <IconButton
-                  sx={{
-                    textTransform: "none",
-                    my: 2,
-                    color: "white",
-                  }}
-                  onClick={toggleTheme}
-                >
-                  {currTheme.palette.mode === "dark" ? (
-                    <Brightness7Icon fontSize="small" />
-                  ) : (
-                    <Brightness4Icon fontSize="small" />
-                  )}
-                </IconButton>
+                  <Tooltip title={"toggle theme"} arrow={true}>
+                    <IconButton
+                      sx={{
+                        textTransform: "none",
+                        my: 2,
+                        color: "inherit",
+                      }}
+                      onClick={toggleTheme}
+                    >
+                      {currTheme.palette.mode === "dark" ? (
+                        <Brightness7Icon fontSize="small" />
+                      ) : (
+                        <Brightness4Icon fontSize="small" />
+                      )}
+                    </IconButton>
+                  </Tooltip>
                 </Box>
-
               </Box>
 
               {/* --------------------------------------------------- */}
@@ -250,6 +226,7 @@ export default function Layout() {
                 >
                   {pages.map((page) => (
                     <Button
+                      color="inherit"
                       key={page.title}
                       onClick={handleCloseNavMenu}
                       component={Link}
@@ -257,13 +234,12 @@ export default function Layout() {
                       variant={
                         location.pathname ===
                         (page.link === "/" ? "" : "/") + page.link
-                          ? "contained"
+                          ? "outlined"
                           : "text"
                       }
                       sx={{
                         textTransform: "none",
                         my: 2,
-                        color: "white",
                       }}
                     >
                       {page.title}
@@ -271,20 +247,23 @@ export default function Layout() {
                   ))}
                 </Box>
 
-                <Button
-                  sx={{
-                    textTransform: "none",
-                    my: 2,
-                    color: "white",
-                  }}
-                  onClick={toggleTheme}
-                >
-                  {currTheme.palette.mode === "dark" ? (
-                    <Brightness7Icon fontSize="small" />
-                  ) : (
-                    <Brightness4Icon fontSize="small" />
-                  )}
-                </Button>
+                {/* Theme Toggle */}
+                <Tooltip title={"toggle theme"} arrow={true}>
+                  <Button
+                    color="inherit"
+                    sx={{
+                      textTransform: "none",
+                      my: 2,
+                    }}
+                    onClick={toggleTheme}
+                  >
+                    {currTheme.palette.mode === "dark" ? (
+                      <Brightness7Icon fontSize="small" />
+                    ) : (
+                      <Brightness4Icon fontSize="small" />
+                    )}
+                  </Button>
+                </Tooltip>
 
                 {/* Contacts */}
                 <Box
@@ -303,7 +282,7 @@ export default function Layout() {
                         sx={{
                           textTransform: "none",
                           my: 2,
-                          color: "white",
+                          color: "inherit",
                         }}
                         onClick={handleCloseNavMenu}
                         aria-label={contact.title}
