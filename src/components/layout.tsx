@@ -19,7 +19,6 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { ThemeProvider, useTheme } from "@emotion/react";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { blue } from "@mui/material/colors";
 
 const pages = [
   {
@@ -69,7 +68,23 @@ const contacts = [
   },
 ];
 
-let theme = createTheme({
+// Theming
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+  typography: {
+    fontFamily: ["Courier", "monospace"].join(","),
+  },
+});
+
+darkTheme.typography.body1 = {
+  [darkTheme.breakpoints.down("md")]: {
+    fontSize: "95%",
+  },
+};
+
+const lightTheme = createTheme({
   palette: {
     mode: "light",
   },
@@ -78,14 +93,11 @@ let theme = createTheme({
   },
 });
 
-theme.typography.body1 = {
-  [theme.breakpoints.down("md")]: {
-    fontSize: "95%",
-  },
-};
+lightTheme.typography.body1 = darkTheme.typography.body1
 
 export default function Layout() {
   const location = useLocation();
+  const [currTheme, setCurrTheme] = React.useState(lightTheme);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -99,8 +111,18 @@ export default function Layout() {
     setAnchorElNav(null);
   };
 
+  // make a function that accepts a string and updates the theme.palette.mode to that string
+  const toggleTheme = () => {
+    if (currTheme.palette.mode === "dark") {
+      setCurrTheme(lightTheme);
+    } else {
+      setCurrTheme(darkTheme);
+    }
+    console.log(currTheme.palette.mode);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currTheme}>
       <CssBaseline />
       <div>
         <AppBar position="static">
@@ -182,6 +204,30 @@ export default function Layout() {
                     </Tooltip>
                   ))}
                 </Box>
+
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "flex", md: "none" },
+                    justifyContent: "right",
+                  }}
+                >
+                <IconButton
+                  sx={{
+                    textTransform: "none",
+                    my: 2,
+                    color: "white",
+                  }}
+                  onClick={toggleTheme}
+                >
+                  {currTheme.palette.mode === "dark" ? (
+                    <Brightness7Icon fontSize="small" />
+                  ) : (
+                    <Brightness4Icon fontSize="small" />
+                  )}
+                </IconButton>
+                </Box>
+
               </Box>
 
               {/* --------------------------------------------------- */}
@@ -190,7 +236,7 @@ export default function Layout() {
               <Box
                 sx={{
                   flexGrow: 1,
-                  display: { xs: "flex", md: "flex" },
+                  display: { xs: "none", md: "flex" },
                   justifyContent: "space-between",
                 }}
               >
@@ -224,6 +270,21 @@ export default function Layout() {
                     </Button>
                   ))}
                 </Box>
+
+                <Button
+                  sx={{
+                    textTransform: "none",
+                    my: 2,
+                    color: "white",
+                  }}
+                  onClick={toggleTheme}
+                >
+                  {currTheme.palette.mode === "dark" ? (
+                    <Brightness7Icon fontSize="small" />
+                  ) : (
+                    <Brightness4Icon fontSize="small" />
+                  )}
+                </Button>
 
                 {/* Contacts */}
                 <Box
