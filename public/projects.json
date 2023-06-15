@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Fractal Explorer",
+    "desc": "A VR experience where the player explores an endless fractal world made with the ray marching algorithm.",
+    "link": "https://nabilmansour.com/FractalExplorer/",
+    "gitLink": "https://github.com/NabilNYMansour/Fractal-Explorer",
+    "youtubeLink" : "https://www.youtube.com/watch?v=-RkAV7bAaSk",
+    "imgLink": "fractalexplorer.png"
+  },
+  {
+    "name": "Neuro Gambit",
+    "desc": "An artificial neural network made and trained using pytorch to play chess.",
+    "gitLink": "https://github.com/NabilNYMansour/Neuro-Gambit",
+    "imgLink": "board.png"
+  },
+  {
+    "name": "Slime Simulation",
+    "desc": "An implementation of slime mold cellular automata. Written in Python using the modernGL library and compute shaders written in GLSL.",
+    "gitLink": "https://github.com/NabilNYMansour/Slime-Simulation",
+    "imgLink": "slime.png"
+  },
+  {
+    "name": "PyLisp",
+    "desc": "A Lisp interpreter written in Python loosely following John McCarthy's Recursive Functions of Symbolic Expressions and Their Computation by Machine and Common Lisp implementation.",
+    "gitLink": "https://github.com/NabilNYMansour/PyLisp"
+  },
+  {
+    "name": "Voxel Terrain",
+    "desc": "A unity demo that showcases a randomly generated voxel terrain based on Minecraft. Made with unity game engine.",
+    "gitLink": "https://github.com/NabilNYMansour/Voxel-Terrain",
+    "imgLink": "voxel.png"
+  }
+]
