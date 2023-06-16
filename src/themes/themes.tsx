@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { green, lime, orange } from "@mui/material/colors";
 
 // Theming
 export const darkTheme = createTheme({
