@@ -17,9 +17,9 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { CssBaseline, Tooltip } from "@mui/material";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { darkTheme, lightTheme } from "../themes/themes";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const pages = [
   {
@@ -98,7 +98,7 @@ export default function Layout() {
     <ThemeProvider theme={currTheme}>
       <CssBaseline />
       <div>
-        <AppBar position="static">
+        <AppBar position="static" color="inherit">
           <Container>
             <Toolbar disableGutters>
               {/* For Phone */}
@@ -146,6 +146,7 @@ export default function Layout() {
                       onClick={handleCloseNavMenu}
                       component={Link}
                       to={page.link}
+                      style={{fontSize: "1rem"}}
                     >
                       <Typography textAlign="center">{page.title}</Typography>
                     </MenuItem>
@@ -197,9 +198,9 @@ export default function Layout() {
                       onClick={toggleTheme}
                     >
                       {currTheme.palette.mode === "dark" ? (
-                        <Brightness7Icon fontSize="small" />
+                        <LightModeIcon fontSize="small" />
                       ) : (
-                        <Brightness4Icon fontSize="small" />
+                        <DarkModeIcon fontSize="small" />
                       )}
                     </IconButton>
                   </Tooltip>
@@ -226,7 +227,7 @@ export default function Layout() {
                 >
                   {pages.map((page) => (
                     <Button
-                      color="inherit"
+                      
                       key={page.title}
                       onClick={handleCloseNavMenu}
                       component={Link}
@@ -234,7 +235,7 @@ export default function Layout() {
                       variant={
                         location.pathname ===
                         (page.link === "/" ? "" : "/") + page.link
-                          ? "outlined"
+                          ? "contained"
                           : "text"
                       }
                       sx={{
@@ -250,7 +251,7 @@ export default function Layout() {
                 {/* Theme Toggle */}
                 <Tooltip title={"toggle theme"} arrow={true}>
                   <Button
-                    color="inherit"
+                    
                     sx={{
                       textTransform: "none",
                       my: 2,
@@ -258,9 +259,9 @@ export default function Layout() {
                     onClick={toggleTheme}
                   >
                     {currTheme.palette.mode === "dark" ? (
-                      <Brightness7Icon fontSize="small" />
+                      <LightModeIcon fontSize="small" />
                     ) : (
-                      <Brightness4Icon fontSize="small" />
+                      <DarkModeIcon fontSize="small" />
                     )}
                   </Button>
                 </Tooltip>
@@ -282,7 +283,7 @@ export default function Layout() {
                         sx={{
                           textTransform: "none",
                           my: 2,
-                          color: "inherit",
+                          color: "primary.main",
                         }}
                         onClick={handleCloseNavMenu}
                         aria-label={contact.title}
