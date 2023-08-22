@@ -1,8 +1,7 @@
-import { BorderLeft } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import Project from "../components/project";
 import { iProject } from "../interfaces/iProject";
-import { Container, List } from "@mui/material";
+import { Container, Link } from "@mui/material";
 
 export const About = () => {
   const [showCursor, setShowCursor] = useState<boolean>(true);
@@ -96,8 +95,8 @@ export const About = () => {
         src="nabil.jpg"
         style={{ width: "250px", borderRadius: "10000px" }}
         loading="lazy"
-        alt="picture of Nabil"
-      ></img>
+        alt="Nabil"
+      />
       <h1>Nabil Mansour</h1>
       <h3>
         {profession.slice(0, currentPos)}
@@ -112,9 +111,9 @@ export const About = () => {
       <Container maxWidth="sm">
         <div>
           Currently an undergrad at{" "}
-          <a target="_blank" rel="noreferrer" href="https:/www.torontomu.ca">
+          <Link href="https:/www.torontomu.ca" target="_blank" rel="noreferrer">
             TMU
-          </a>{" "}
+          </Link>{" "}
           (formerly Ryerson).
         </div>
         <br></br>

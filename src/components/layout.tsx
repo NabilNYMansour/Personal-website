@@ -15,11 +15,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ShaderToyIcon from "../icons/shaderToyIcon";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { CssBaseline, Tooltip } from "@mui/material";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "../themes/themes";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { YouTube } from "@mui/icons-material";
 
 const pages = [
   {
@@ -40,6 +41,11 @@ const pages = [
   // },
 ];
 const contacts = [
+  {
+    link: "https://www.youtube.com/@nabilnymansour",
+    title: "Youtube",
+    icon: <YouTube />,
+  },
   {
     link: "mailto:nabilnymansour@gmail.com",
     title: "Email",
@@ -70,8 +76,7 @@ const contacts = [
 ];
 
 export default function Layout() {
-  const location = useLocation();
-  const [currTheme, setCurrTheme] = React.useState(lightTheme);
+  const [currTheme, setCurrTheme] = React.useState(darkTheme);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -85,7 +90,6 @@ export default function Layout() {
     setAnchorElNav(null);
   };
 
-  // make a function that accepts a string and updates the theme.palette.mode to that string
   const toggleTheme = () => {
     if (currTheme.palette.mode === "dark") {
       setCurrTheme(lightTheme);
@@ -146,7 +150,7 @@ export default function Layout() {
                       onClick={handleCloseNavMenu}
                       component={Link}
                       to={page.link}
-                      style={{fontSize: "1rem"}}
+                      style={{ fontSize: "1rem" }}
                     >
                       <Typography textAlign="center">{page.title}</Typography>
                     </MenuItem>
@@ -216,32 +220,23 @@ export default function Layout() {
                   display: { xs: "none", md: "flex" },
                   justifyContent: "space-between",
                 }}
+                
               >
                 {/* Pages */}
-                <Box
+                <Box maxWidth={300}
                   sx={{
                     flexGrow: 1,
                     display: { xs: "none", md: "flex" },
-                    justifyContent: "center",
                   }}
                 >
                   {pages.map((page) => (
                     <Button
-                      
                       key={page.title}
+                      color="inherit"
                       onClick={handleCloseNavMenu}
                       component={Link}
                       to={page.link}
-                      variant={
-                        location.pathname ===
-                        (page.link === "/" ? "" : "/") + page.link
-                          ? "contained"
-                          : "text"
-                      }
-                      sx={{
-                        textTransform: "none",
-                        my: 2,
-                      }}
+                      sx={{ my: 2 }}
                     >
                       {page.title}
                     </Button>
@@ -250,14 +245,7 @@ export default function Layout() {
 
                 {/* Theme Toggle */}
                 <Tooltip title={"toggle theme"} arrow={true}>
-                  <Button
-                    
-                    sx={{
-                      textTransform: "none",
-                      my: 2,
-                    }}
-                    onClick={toggleTheme}
-                  >
+                  <Button sx={{ my: 2 }} onClick={toggleTheme} color="inherit">
                     {currTheme.palette.mode === "dark" ? (
                       <LightModeIcon fontSize="small" />
                     ) : (
@@ -268,10 +256,10 @@ export default function Layout() {
 
                 {/* Contacts */}
                 <Box
+                maxWidth={300}
                   sx={{
                     flexGrow: 1,
                     display: { xs: "none", md: "flex" },
-                    justifyContent: "center",
                   }}
                 >
                   {contacts.map((contact, i) => (
@@ -283,7 +271,7 @@ export default function Layout() {
                         sx={{
                           textTransform: "none",
                           my: 2,
-                          color: "primary.main",
+                          color: "inherit",
                         }}
                         onClick={handleCloseNavMenu}
                         aria-label={contact.title}
@@ -303,7 +291,7 @@ export default function Layout() {
         {/* --------------------------------------------------- */}
 
         {/* Main page */}
-        <Container style={{ padding: "50px 10px 50px 10px" }} maxWidth="md">
+        <Container style={{ padding: "50px 10px 50px 10px" }}>
           <Outlet />
         </Container>
       </div>

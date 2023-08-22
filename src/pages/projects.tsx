@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Project from "../components/project";
-import { Grid, ImageList, ImageListItem, ListItem } from "@mui/material";
+import { Grid } from "@mui/material";
 import { iProject } from "../interfaces/iProject";
 
 export const Projects = () => {

@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
 import { iShader } from "../interfaces/iShader";
-import { Grid } from "@mui/material";
+import { CircularProgress, Grid, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 export const Shaders = () => {
   const [shaders, setShaders] = useState<iShader[]>([]);
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const [iFramesLoaded, setIFramesLoaded] = useState<number>(0);
+
+  const handleIfrmeLoaded = async () => {
+    setIFramesLoaded(prevState => prevState+1);
+  };
 
   const getShaders = async () => {
     fetch("/shaders.json")
@@ -18,30 +27,23 @@ export const Shaders = () => {
   }, []);
 
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Grid container justifyContent="center">
+      {iFramesLoaded < shaders.length && (
+        <div key={"loading"} style={{ position: "absolute" }}>
+          <CircularProgress />
+        </div>
+      )}
       {shaders.map((shader, i) => (
         <div>
-          {/* For Desktop */}
-          <Grid key={i} item sx={{ display: { xs: "none", md: "flex" } }}>
+          <Grid key={i} item>
             <iframe
               title={shader.name}
               key={i}
-              width="400"
-              height="250"
+              width={isMd ? "400" : "350"}
+              height={isMd ? "250" : "300"}
               src={shader.codeLink}
-            />
-          </Grid>
-
-          {/* --------------------------------------------------- */}
-
-          {/* For Phone */}
-          <Grid key={i} item sx={{ display: { xs: "flex", md: "none" } }}>
-            <iframe
-              title={shader.name}
-              key={i}
-              width="350"
-              height="300"
-              src={shader.codeLink}
+              onLoad={handleIfrmeLoaded}
+              hidden={iFramesLoaded < shaders.length}
             />
           </Grid>
         </div>

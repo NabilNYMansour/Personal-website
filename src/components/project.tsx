@@ -49,7 +49,7 @@ export default function Project(project: iProject) {
         ) : null}
         {project.youtubeLink ? (
           <IconButton
-            href={project.link}
+            href={project.youtubeLink}
             target="_blank"
             rel="noreferrer"
             size="small"
