@@ -5,4 +5,5 @@ export interface iProject {
     gitLink: string;
     imgLink: string;
     youtubeLink: string;
+    steamLink: string;
   }

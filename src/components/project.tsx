@@ -8,6 +8,7 @@ import { iProject } from "../interfaces/iProject";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import SteamIcon from "../icons/steamIcon";
 
 export default function Project(project: iProject) {
   return (
@@ -58,15 +59,28 @@ export default function Project(project: iProject) {
             <YouTubeIcon />
           </IconButton>
         ) : null}
-        <IconButton
-          href={project.gitLink}
-          target="_blank"
-          rel="noreferrer"
-          size="small"
-          color="primary"
-        >
-          <GitHubIcon />
-        </IconButton>
+        {project.gitLink ? (
+          <IconButton
+            href={project.gitLink}
+            target="_blank"
+            rel="noreferrer"
+            size="small"
+            color="primary"
+          >
+            <GitHubIcon />
+          </IconButton>
+        ) : null}
+        {project.steamLink ? (
+          <IconButton
+            href={project.steamLink}
+            target="_blank"
+            rel="noreferrer"
+            size="small"
+            color="primary"
+          >
+            <SteamIcon />
+          </IconButton>
+        ) : null}
       </CardActions>
     </Card>
   );

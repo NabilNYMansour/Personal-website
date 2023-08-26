@@ -1,5 +1,13 @@
 [
   {
+    "name": "Fractal Glide",
+    "desc": "A fractal game where the player glides through mesmerizing fractal landscapes. Available on Steam.",
+    "link": "https://nabilmansour.com/FractalGlide/",
+    "youtubeLink" : "https://www.youtube.com/watch?v=Ng7I_fqYkqo",
+    "imgLink": "fractalglide.jpg",
+    "steamLink" : "https://store.steampowered.com/app/2565200/Fractal_Glide/"
+  },
+  {
     "name": "Fractal Explorer",
     "desc": "A VR experience where the player explores an endless fractal world made with the ray marching algorithm.",
     "link": "https://nabilmansour.com/FractalExplorer/",
