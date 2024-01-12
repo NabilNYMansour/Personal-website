@@ -111,7 +111,7 @@ export const About = () => {
       <Container maxWidth="sm">
         <div>
           Currently an undergrad at{" "}
-          <Link href="https:/www.torontomu.ca" target="_blank" rel="noreferrer">
+          <Link href="https://www.torontomu.ca" target="_blank" rel="noreferrer">
             TMU
           </Link>{" "}
           (formerly Ryerson).
