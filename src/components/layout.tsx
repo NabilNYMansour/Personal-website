@@ -69,7 +69,7 @@ const contacts = [
   },
 
   {
-    link: "NNYM_Resume_2023.pdf",
+    link: "NNYM_Resume.pdf",
     title: "Resume",
     icon: <ContactPageIcon />,
   },

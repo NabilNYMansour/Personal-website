@@ -1,5 +1,11 @@
 [
   {
+    "name": "Unity FractiX",
+    "desc": "An open-source Cone marching/Ray marching rendering engine written as an post-effect to the Unity rendering pipeline.",
+    "gitLink": "https://github.com/NabilNYMansour/Unity-FractiX",
+    "imgLink": "FractiX.png"
+  },
+  {
     "name": "Fractal Glide",
     "desc": "A fractal game where the player glides through mesmerizing fractal landscapes. Available on Steam.",
     "link": "https://nabilmansour.com/FractalGlide/",
