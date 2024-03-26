@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import "@fontsource/roboto/300.css";
 
-const font = "Roboto";
+const font = "Caviar-Dreams";
 
 // Theming
 export const darkTheme = createTheme({

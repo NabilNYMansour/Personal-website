@@ -1,13 +1,20 @@
+@font-face {
+  font-family: 'Caviar-Dreams';
+  src: url('/public/Caviar-Dreams.ttf.woff') format('woff'),
+    url('/public/Caviar-Dreams.ttf.svg#Caviar-Dreams') format('svg'),
+    url('/public/Caviar-Dreams.ttf.eot'),
+    url('/public/Caviar-Dreams.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Caviar-Dreams';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

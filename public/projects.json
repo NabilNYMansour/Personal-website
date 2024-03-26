@@ -1,5 +1,12 @@
 [
   {
+    "name": "Perlin Viewer",
+    "desc": "A web app made with React and R3F to showcase 3D Perlin noise generation.",
+    "gitLink": "https://github.com/NabilNYMansour/Perlin-Viewer",
+    "link": "https://nabilmansour.com/PerlinViewer/",
+    "imgLink": "perlinViewer.png"
+  },
+  {
     "name": "Unity FractiX",
     "desc": "An open-source Cone marching/Ray marching rendering engine written as an post-effect to the Unity rendering pipeline.",
     "gitLink": "https://github.com/NabilNYMansour/Unity-FractiX",

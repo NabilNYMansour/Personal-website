@@ -110,20 +110,20 @@ export const About = () => {
       </h3>
       <Container maxWidth="sm">
         <div>
-          Currently an undergrad at{" "}
+          A {" "}
           <Link href="https://www.torontomu.ca" target="_blank" rel="noreferrer">
             TMU
           </Link>{" "}
-          (formerly Ryerson).
+          (formerly Ryerson) undergraduate.
         </div>
-        <br></br>
+        <br />
         <div>
           I dabble in everything related to computers, but have been recently
           focusing on AI/ML and Graphics. I hope to one day combine the two.
         </div>
       </Container>
       <b style={{ padding: "50px 0px 10px 0px" }}>
-        The following is my latest major project:
+        The following is my latest project:
       </b>
       {project !== null ? (
         <div>

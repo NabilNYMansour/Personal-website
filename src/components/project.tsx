@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, CardActions, IconButton } from "@mui/material";
+import { Button, CardActionArea, CardActions, IconButton, Paper, Stack } from "@mui/material";
 import { iProject } from "../interfaces/iProject";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
