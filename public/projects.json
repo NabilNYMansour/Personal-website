@@ -43,7 +43,8 @@
   {
     "name": "PyLisp",
     "desc": "A Lisp interpreter written in Python loosely following John McCarthy's Recursive Functions of Symbolic Expressions and Their Computation by Machine and Common Lisp implementation.",
-    "gitLink": "https://github.com/NabilNYMansour/PyLisp"
+    "gitLink": "https://github.com/NabilNYMansour/PyLisp",
+    "imgLink": "pylisp.png"
   },
   {
     "name": "Voxel Terrain",
