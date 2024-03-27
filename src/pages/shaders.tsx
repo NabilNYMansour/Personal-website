@@ -11,7 +11,7 @@ export const Shaders = () => {
   const [iFramesLoaded, setIFramesLoaded] = useState<number>(0);
 
   const handleIfrmeLoaded = async () => {
-    setIFramesLoaded(prevState => prevState+1);
+    setIFramesLoaded(prevState => prevState + 1);
   };
 
   const getShaders = async () => {
@@ -27,18 +27,18 @@ export const Shaders = () => {
   }, []);
 
   return (
-    <Grid container justifyContent="center">
+    <Grid container key={"main container"} justifyContent="center">
       {iFramesLoaded < shaders.length && (
         <div key={"loading"} style={{ position: "absolute" }}>
           <CircularProgress />
         </div>
       )}
       {shaders.map((shader, i) => (
-        <div>
+        <div key={i}>
           <Grid key={i} item>
             <iframe
-              title={shader.name}
               key={i}
+              title={shader.name}
               width={isMd ? "400" : "350"}
               height={isMd ? "250" : "300"}
               src={shader.codeLink}

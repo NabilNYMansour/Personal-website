@@ -6,4 +6,5 @@ export interface iProject {
     imgLink: string;
     youtubeLink: string;
     steamLink: string;
+    techList: string[];
   }

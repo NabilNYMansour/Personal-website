@@ -4,52 +4,112 @@
     "desc": "A web app made with React and R3F to showcase 3D Perlin noise generation.",
     "gitLink": "https://github.com/NabilNYMansour/Perlin-Viewer",
     "link": "https://nabilmansour.com/PerlinViewer/",
-    "imgLink": "perlinViewer.png"
+    "imgLink": "perlinViewer.png",
+    "techList": [
+      "TypeScript",
+      "React",
+      "Three.js",
+      "MUI"
+    ]
   },
   {
     "name": "Unity FractiX",
     "desc": "An open-source Cone marching/Ray marching rendering engine written as an post-effect to the Unity rendering pipeline.",
     "gitLink": "https://github.com/NabilNYMansour/Unity-FractiX",
-    "imgLink": "FractiX.png"
+    "imgLink": "FractiX.png",
+    "techList": [
+      "C#",
+      "HLSL",
+      "Unity"
+    ]
   },
   {
     "name": "Fractal Glide",
     "desc": "A fractal game where the player glides through mesmerizing fractal landscapes. Available on Steam.",
     "link": "https://nabilmansour.com/FractalGlide/",
-    "youtubeLink" : "https://www.youtube.com/watch?v=Ng7I_fqYkqo",
+    "youtubeLink": "https://www.youtube.com/watch?v=Ng7I_fqYkqo",
     "imgLink": "fractalglide.jpg",
-    "steamLink" : "https://store.steampowered.com/app/2565200/Fractal_Glide/"
+    "steamLink": "https://store.steampowered.com/app/2565200/Fractal_Glide/",
+    "techList": [
+      "C#",
+      "HLSL",
+      "Unity"
+    ]
   },
   {
     "name": "Fractal Explorer",
     "desc": "A VR experience where the player explores an endless fractal world made with the ray marching algorithm.",
     "link": "https://nabilmansour.com/FractalExplorer/",
     "gitLink": "https://github.com/NabilNYMansour/Fractal-Explorer",
-    "youtubeLink" : "https://www.youtube.com/watch?v=-RkAV7bAaSk",
-    "imgLink": "fractalexplorer.png"
+    "youtubeLink": "https://www.youtube.com/watch?v=-RkAV7bAaSk",
+    "imgLink": "fractalexplorer.png",
+    "techList": [
+      "C#",
+      "HLSL",
+      "Unity"
+    ]
   },
   {
     "name": "Neuro Gambit",
     "desc": "An artificial neural network made and trained using pytorch to play chess.",
     "gitLink": "https://github.com/NabilNYMansour/Neuro-Gambit",
-    "imgLink": "board.png"
+    "imgLink": "board.png",
+    "techList": [
+      "Python",
+      "Pytorch",
+      "Jupyter Notebook"
+    ]
   },
   {
     "name": "Slime Simulation",
     "desc": "An implementation of slime mold cellular automata. Written in Python using the modernGL library and compute shaders written in GLSL.",
     "gitLink": "https://github.com/NabilNYMansour/Slime-Simulation",
-    "imgLink": "slime.png"
+    "imgLink": "slime.png",
+    "techList": [
+      "Python",
+      "GLSL",
+      "ModernGL",
+      "ImGUI"
+    ]
   },
   {
     "name": "PyLisp",
     "desc": "A Lisp interpreter written in Python loosely following John McCarthy's Recursive Functions of Symbolic Expressions and Their Computation by Machine and Common Lisp implementation.",
     "gitLink": "https://github.com/NabilNYMansour/PyLisp",
-    "imgLink": "pylisp.png"
+    "imgLink": "pylisp.png",
+    "techList": [
+      "Python",
+      "Common Lisp"
+    ]
+  },
+  {
+    "name": "Self Parallel Parking Arduino Car",
+    "desc": "An Arduino car that parallel parks on its own.",
+    "gitLink": "https://github.com/NabilNYMansour/CPS607-Self-Parallel-Parking",
+    "imgLink": "parallelPark.png",
+    "techList": [
+      "C++",
+      "Arduino"
+    ]
+  },
+  {
+    "name": "Wireless Arduino RC Car",
+    "desc": "A wireless Arduino RC car made out of cardboard and controlled using radio antennas.",
+    "gitLink": "https://github.com/NabilNYMansour/Wireless-RC-Car",
+    "imgLink": "rcCar.png",
+    "techList": [
+      "C++",
+      "Arduino"
+    ]
   },
   {
     "name": "Voxel Terrain",
     "desc": "A unity demo that showcases a randomly generated voxel terrain based on Minecraft. Made with unity game engine.",
     "gitLink": "https://github.com/NabilNYMansour/Voxel-Terrain",
-    "imgLink": "voxel.png"
+    "imgLink": "voxel.png",
+    "techList": [
+      "C#",
+      "Unity"
+    ]
   }
 ]

@@ -1,14 +1,14 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, IconButton, Paper, Stack } from "@mui/material";
+import { CardActionArea, CardActions, IconButton } from "@mui/material";
 import { iProject } from "../interfaces/iProject";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import SteamIcon from "../icons/steamIcon";
+import TechList from "./techList";
 
 export default function Project(project: iProject) {
   return (
@@ -36,6 +36,8 @@ export default function Project(project: iProject) {
           </Typography>
         </CardContent>
       </CardActionArea>
+      {project.techList ? <TechList techList={project.techList} variant="outlined"/> : null}
+
       <CardActions>
         {project.link ? (
           <IconButton

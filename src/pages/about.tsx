@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Project from "../components/project";
 import { iProject } from "../interfaces/iProject";
 import { Container, Link } from "@mui/material";
+import TechList from "../components/techList";
 
 export const About = () => {
   const [showCursor, setShowCursor] = useState<boolean>(true);
@@ -122,6 +123,13 @@ export const About = () => {
           focusing on AI/ML and Graphics. I hope to one day combine the two.
         </div>
       </Container>
+      <b style={{ padding: "50px 0px 10px 0px" }}>
+        Here's a list of technologies that I've used:
+      </b>
+      <TechList key="techList" variant="elevation"
+        techList={
+          ["Python", "TypeScript", "JavaScript", "C", "C++", "C#", "React", "MUI",
+            "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Arduino"]} />
       <b style={{ padding: "50px 0px 10px 0px" }}>
         The following is my latest project:
       </b>
