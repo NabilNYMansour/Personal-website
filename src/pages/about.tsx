@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import Project from "../components/project";
 import { iProject } from "../interfaces/iProject";
-import { Container, Link } from "@mui/material";
+import { Button, Container, Link } from "@mui/material";
 import TechList from "../components/techList";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link as RouterLink } from "react-router-dom";
+
+
+const technologies = ["Python", "TypeScript", "JavaScript", "C", "C++", "C#", "React", "MUI",
+  "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Arduino"];
 
 export const About = () => {
   const [showCursor, setShowCursor] = useState<boolean>(true);
@@ -127,16 +133,20 @@ export const About = () => {
         Here's a list of technologies that I've used:
       </b>
       <TechList key="techList" variant="elevation"
-        techList={
-          ["Python", "TypeScript", "JavaScript", "C", "C++", "C#", "React", "MUI",
-            "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Arduino"]} />
+        techList={technologies} />
       <b style={{ padding: "50px 0px 10px 0px" }}>
         The following is my latest project:
       </b>
       {project !== null ? (
-        <div>
-          <Project {...project} />
-        </div>
+        <>
+          <div>
+            <Project {...project} />
+          </div>
+          <Button variant="text" endIcon={<ArrowForwardIcon />}
+            component={RouterLink} to={"projects"}>
+            See more projects
+          </Button>
+        </>
       ) : (
         "LOADING..."
       )}
