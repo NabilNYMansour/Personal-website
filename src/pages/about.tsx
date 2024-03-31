@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Project from "../components/project";
 import { iProject } from "../interfaces/iProject";
-import { Button, Container, Link } from "@mui/material";
+import { Button, Container, Grid, Link } from "@mui/material";
 import TechList from "../components/techList";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link as RouterLink } from "react-router-dom";
 
 
-const technologies = ["Python", "TypeScript", "JavaScript", "C", "C++", "C#", "React", "MUI",
+const technologies = ["Python", "TypeScript", "JavaScript", "C/C++", "C#", "React", "MUI",
   "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Arduino"];
 
 export const About = () => {
@@ -75,13 +75,13 @@ export const About = () => {
   }, [showCursor]);
 
   // Latest project fetch
-  const [project, setLatestProject] = useState<iProject | null>(null);
+  const [projects, setLatestProjects] = useState<iProject[] | null>(null);
 
   const getProjects = async () => {
     fetch("/projects.json")
       .then((response) => response.json())
       .then((data) => {
-        setLatestProject(data[0]);
+        setLatestProjects(data.slice(0, 3));
       })
   };
 
@@ -135,13 +135,19 @@ export const About = () => {
       <TechList key="techList" variant="elevation"
         techList={technologies} />
       <b style={{ padding: "50px 0px 10px 0px" }}>
-        The following is my latest project:
+        The following are my latest projects:
       </b>
-      {project !== null ? (
+      {projects !== null ? (
         <>
-          <div>
-            <Project {...project} />
-          </div>
+          <Grid container spacing={2} justifyContent="center">
+            {
+              projects.map((project, i) => (
+                <Grid key={i} item>
+                  <Project key={i} {...project} />
+                </Grid>
+              ))
+            }
+          </Grid>
           <Button variant="text" endIcon={<ArrowForwardIcon />}
             component={RouterLink} to={"projects"}>
             See more projects
