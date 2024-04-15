@@ -8,6 +8,7 @@ import Projects from "./pages/projects";
 import About from "./pages/about";
 import Shaders from "./pages/shaders";
 import Blogs from "./pages/blogs";
+import NotFound from "./pages/notFound";
 import { createTheme } from "@mui/material";
 
 const root = ReactDOM.createRoot(
@@ -38,6 +39,7 @@ root.render(
           <Route path="projects" element={<Projects />} />
           <Route path="shaders" element={<Shaders />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
