@@ -1,16 +1,5 @@
 [
   {
-    "name": "Stippling Transparecy",
-    "desc": "A web app that showcases a shader that allows for a stippling transparency effect.",
-    "gitLink": "https://github.com/NabilNYMansour/Transparent-Stippling-Threejs",
-    "link": "https://nabilmansour.com/TransparentStippling/",
-    "imgLink": "TransparentStippling.png",
-    "techList": [
-      "TypeScript",
-      "Three.js"
-    ]
-  },
-  {
     "name": "Perlin Viewer",
     "desc": "A web app made with React and R3F to showcase 3D Perlin noise generation.",
     "gitLink": "https://github.com/NabilNYMansour/Perlin-Viewer",
