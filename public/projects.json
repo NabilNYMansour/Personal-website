@@ -1,5 +1,18 @@
 [
   {
+    "name": "Three.js Ray Marcher",
+    "desc": "A ray marching web app where you can edit and render SDFs.",
+    "gitLink": "https://github.com/NabilNYMansour/ThreeJS-RayMarcher",
+    "link": "https://nabilmansour.com/ThreeJSRayMarcher/",
+    "imgLink": "raymarcher.png",
+    "techList": [
+      "TypeScript",
+      "React",
+      "Three.js",
+      "MUI"
+    ]
+  },
+  {
     "name": "Perlin Viewer",
     "desc": "A web app made with React and R3F to showcase 3D Perlin noise generation.",
     "gitLink": "https://github.com/NabilNYMansour/Perlin-Viewer",
@@ -8,7 +21,7 @@
     "techList": [
       "TypeScript",
       "React",
-      "Three.js",
+      "R3F",
       "MUI"
     ]
   },
