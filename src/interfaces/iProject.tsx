@@ -7,4 +7,5 @@ export interface iProject {
     youtubeLink: string;
     steamLink: string;
     techList: string[];
+    highlight: boolean;
   }

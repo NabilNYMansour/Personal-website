@@ -8,7 +8,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 
 const technologies = ["Python", "TypeScript", "JavaScript", "C/C++", "C#", "React", "MUI",
-  "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Arduino"];
+  "Three.js", "OpenGL", "WebGL", "Unity", "Pytorch", "SQL", "Common Lisp", "Arduino"];
 
 export const About = () => {
   const [showCursor, setShowCursor] = useState<boolean>(true);
@@ -81,7 +81,7 @@ export const About = () => {
     fetch("/projects.json")
       .then((response) => response.json())
       .then((data) => {
-        setLatestProjects(data.slice(0, 3));
+        setLatestProjects(data);
       })
   };
 
@@ -121,12 +121,12 @@ export const About = () => {
           <Link href="https://www.torontomu.ca" target="_blank" rel="noreferrer">
             TMU
           </Link>{" "}
-          (formerly Ryerson) undergraduate.
+          (formerly Ryerson) CS new grad.
         </div>
         <br />
         <div>
           I dabble in everything related to computers, but have been recently
-          focusing on AI/ML and Graphics. I hope to one day combine the two.
+          focusing Graphics and webdev.
         </div>
       </Container>
       <b style={{ padding: "50px 0px 10px 0px" }}>
@@ -135,20 +135,21 @@ export const About = () => {
       <TechList key="techList" variant="elevation"
         techList={technologies} />
       <b style={{ padding: "50px 0px 10px 0px" }}>
-        The following are my latest projects:
+        And here's some of my highlighted projects:
       </b>
       {projects !== null ? (
         <>
           <Grid container spacing={2} justifyContent="center">
             {
               projects.map((project, i) => (
+                project.highlight &&
                 <Grid key={i} item>
                   <Project key={i} {...project} />
                 </Grid>
               ))
             }
           </Grid>
-          <Button variant="text" endIcon={<ArrowForwardIcon />}
+          <Button style={{margin: "5px"}} variant="text" endIcon={<ArrowForwardIcon />}
             component={RouterLink} to={"projects"}>
             See more projects
           </Button>

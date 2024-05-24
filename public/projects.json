@@ -10,7 +10,8 @@
       "React",
       "Three.js",
       "MUI"
-    ]
+    ],
+    "highlight": true
   },
   {
     "name": "Perlin Viewer",
@@ -23,7 +24,8 @@
       "React",
       "R3F",
       "MUI"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Unity FractiX",
@@ -34,7 +36,8 @@
       "C#",
       "HLSL",
       "Unity"
-    ]
+    ],
+    "highlight": true
   },
   {
     "name": "Fractal Glide",
@@ -47,7 +50,8 @@
       "C#",
       "HLSL",
       "Unity"
-    ]
+    ],
+    "highlight": true
   },
   {
     "name": "Fractal Explorer",
@@ -60,7 +64,8 @@
       "C#",
       "HLSL",
       "Unity"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Neuro Gambit",
@@ -71,7 +76,8 @@
       "Python",
       "Pytorch",
       "Jupyter Notebook"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Slime Simulation",
@@ -83,7 +89,8 @@
       "GLSL",
       "ModernGL",
       "ImGUI"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "PyLisp",
@@ -93,7 +100,8 @@
     "techList": [
       "Python",
       "Common Lisp"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Self Parallel Parking Arduino Car",
@@ -103,7 +111,8 @@
     "techList": [
       "C++",
       "Arduino"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Wireless Arduino RC Car",
@@ -113,7 +122,8 @@
     "techList": [
       "C++",
       "Arduino"
-    ]
+    ],
+    "highlight": false
   },
   {
     "name": "Voxel Terrain",
@@ -123,6 +133,7 @@
     "techList": [
       "C#",
       "Unity"
-    ]
+    ],
+    "highlight": false
   }
 ]

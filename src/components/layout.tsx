@@ -14,13 +14,16 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ShaderToyIcon from "../icons/shaderToyIcon";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
-import { CssBaseline, Tooltip } from "@mui/material";
+import { CssBaseline, Theme, Tooltip } from "@mui/material";
 import { Outlet, Link } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { darkTheme, lightTheme } from "../themes/themes";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { YouTube } from "@mui/icons-material";
+import MediumIcon from "../icons/mediumIcon";
+import Contacts from "../components/contacts";
+import LayoutFooter from "./layoutFooter";
 
 const pages = [
   {
@@ -35,21 +38,23 @@ const pages = [
     link: "shaders",
     title: "Shaders",
   },
-  // {
-  //   link: "blogs",
-  //   title: "Blogs",
-  // },
 ];
 const contacts = [
   {
     link: "https://www.youtube.com/@nabilnymansour",
-    title: "Youtube",
+    title: "YouTube",
     icon: <YouTube />,
+
   },
   {
-    link: "mailto:nabilnymansour@gmail.com",
-    title: "Email",
-    icon: <EmailIcon />,
+    link: "https://medium.com/@nabilnymansour",
+    title: "Medium",
+    icon: <MediumIcon />,
+  },
+  {
+    link: "https://www.linkedin.com/in/nnym/",
+    title: "LinkedIn",
+    icon: <LinkedInIcon />,
   },
   {
     link: "https://github.com/NabilNYMansour",
@@ -57,26 +62,24 @@ const contacts = [
     icon: <GitHubIcon />,
   },
   {
-    link: "https://www.linkedin.com/in/nnym/",
-    title: "LinkedIn",
-    icon: <LinkedInIcon />,
-  },
-
-  {
     link: "https://www.shadertoy.com/user/chickenlegs",
     title: "ShaderToy",
     icon: <ShaderToyIcon />,
   },
-
   {
     link: "NNYM_Resume.pdf",
     title: "Resume",
     icon: <ContactPageIcon />,
   },
+  {
+    link: "mailto:nabilnymansour@gmail.com",
+    title: "Email",
+    icon: <EmailIcon />,
+  },
 ];
 
 export default function Layout() {
-  const [currTheme, setCurrTheme] = React.useState(darkTheme);
+  const [currTheme, setCurrTheme] = React.useState<Theme>(darkTheme);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -100,8 +103,13 @@ export default function Layout() {
 
   return (
     <ThemeProvider theme={currTheme}>
-      <CssBaseline />
-      <div>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+      }}>
+        <CssBaseline />
+        {/* App bar */}
         <AppBar position="static" color="inherit">
           <Container>
             <Toolbar disableGutters>
@@ -125,6 +133,7 @@ export default function Layout() {
                 >
                   <MenuIcon />
                 </IconButton>
+                {/* Pages menu */}
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorElNav}
@@ -165,23 +174,10 @@ export default function Layout() {
                     justifyContent: "right",
                   }}
                 >
-                  {contacts.map((contact, i) => (
-                    <Tooltip key={i} title={contact.title} arrow={true}>
-                      <IconButton
-                        href={contact.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        sx={{
-                          my: 2,
-                          color: "inherit",
-                        }}
-                        onClick={handleCloseNavMenu}
-                        aria-label={contact.title}
-                      >
-                        {contact.icon}
-                      </IconButton>
-                    </Tooltip>
-                  ))}
+                  <Contacts
+                    contacts={contacts}
+                    handleCloseNavMenu={handleCloseNavMenu}
+                    iconSize="small" />
                 </Box>
 
                 {/* Theme Toggle */}
@@ -220,7 +216,6 @@ export default function Layout() {
                   display: { xs: "none", md: "flex" },
                   justifyContent: "space-between",
                 }}
-                
               >
                 {/* Pages */}
                 <Box maxWidth={300}
@@ -256,32 +251,17 @@ export default function Layout() {
 
                 {/* Contacts */}
                 <Box
-                maxWidth={300}
+                  maxWidth={300}
                   sx={{
                     flexGrow: 1,
                     display: { xs: "none", md: "flex" },
+                    justifyContent: "right",
                   }}
                 >
-                  {contacts.map((contact, i) => (
-                    <Tooltip key={i} title={contact.title} arrow={true}>
-                      <IconButton
-                        href={contact.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        sx={{
-                          textTransform: "none",
-                          my: 2,
-                          color: "inherit",
-                        }}
-                        onClick={handleCloseNavMenu}
-                        aria-label={contact.title}
-                      >
-                        {React.cloneElement(contact.icon, {
-                          fontSize: "large",
-                        })}
-                      </IconButton>
-                    </Tooltip>
-                  ))}
+                  <Contacts
+                    contacts={contacts}
+                    handleCloseNavMenu={handleCloseNavMenu}
+                    iconSize="large" />
                 </Box>
               </Box>
             </Toolbar>
@@ -294,7 +274,10 @@ export default function Layout() {
         <Container style={{ padding: "50px 10px 50px 10px" }}>
           <Outlet />
         </Container>
+        {/* Footer */}
+        <LayoutFooter contacts={contacts} handleCloseNavMenu={handleCloseNavMenu} currTheme={currTheme} />
       </div>
-    </ThemeProvider>
+    </ThemeProvider >
+
   );
 }
