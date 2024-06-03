@@ -1,10 +1,10 @@
-import { createTheme } from "@mui/material";
+import { Theme, createTheme } from "@mui/material";
 import "@fontsource/roboto/300.css";
 
 const font = "Caviar-Dreams";
 
 // Theming
-export const darkTheme = createTheme({
+export const darkTheme: Theme = createTheme({
   palette: {
     mode: "dark",
     background: {
@@ -14,6 +14,9 @@ export const darkTheme = createTheme({
   },
   typography: {
     fontFamily: font,
+    button: {
+      textTransform: 'none',
+    },
   },
 });
 
@@ -24,7 +27,9 @@ darkTheme.typography.body1 = {
   },
 };
 
-export const lightTheme = createTheme({
+export const offDarkColor = "#34333C";
+
+export const lightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
@@ -35,7 +40,12 @@ export const lightTheme = createTheme({
   },
   typography: {
     fontFamily: font,
+    button: {
+      textTransform: 'none'
+    },
   },
 });
+
+export const offLightColor = "#f1f1f1";
 
 lightTheme.typography.body1 = darkTheme.typography.body1;

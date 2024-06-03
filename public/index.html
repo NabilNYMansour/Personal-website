@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo192.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1.0" /> -->
-    <meta name="theme-color" content="#000000" />
-    <meta name="title" content="The portfolio of Nabil Mansour" />
-    <meta
-      name="description"
-      content="The portfolio of Nabil Mansour: Software Engineer, GPU Programmer, and Web developer based in Toronto. Current 5th year Student at Toronto Metropolitan University."
-    />
-    <meta
-      name="keywords"
-      content="Nabil Mansour, Software Developer, Frontend Developer, Portfolio, Toronto, Shader"
-    />
-    <meta name="author" content="Nabil Mansour" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Nabil Mansour's Portfolio</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/logo192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="title" content="The portfolio of Nabil Mansour" />
+  <meta name="description"
+    content="The portfolio of Nabil Mansour: Software Engineer, GPU Programmer, and Web developer based in Toronto. A new CS grad from Toronto Metropolitan University." />
+  <meta name="keywords" content="Nabil Mansour, Software Developer, Frontend Developer, Portfolio, Toronto, Shader" />
+  <meta name="author" content="Nabil Mansour" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nabilmansour.com/" />
+  <meta property="og:title" content="The portfolio of Nabil Mansour" />
+  <meta property="og:description" content="Software Engineer, GPU Programmer, and Web developer based in Toronto." />
+  <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.nabilmansour.com/" />
+  <meta property="twitter:title" content="The portfolio of Nabil Mansour" />
+  <meta property="twitter:description"
+    content="Software Engineer, GPU Programmer, and Web developer based in Toronto." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/logo192.png" />
+  <meta name="twitter:creator" content="@nabilnymansour">
+
+  <title>Nabil Mansour's Portfolio</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nabil Mansour",
+      "url": "https://www.nabilmansour.com/",
+      "sameAs": [
+        "https://www.youtube.com/@nabilnymansour",
+        "https://github.com/NabilNYMansour",
+        "https://www.linkedin.com/in/nnym/"
+      ],
+      "jobTitle": "Software Engineer, GPU Programmer, and Web developer",
+      "alumniOf": "Toronto Metropolitan University",
+      "description": "A new CS grad passionate about creating beautiful and efficient software with experience in developing web applications, writing shaders, and optimizing code for GPUs."
+    }
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <article>
+      <header>
+        <h1>Nabil Mansour's Portfolio</h1>
+        <h2>Software Engineer, GPU Programmer, and Web developer based in Toronto</h2>
+      </header>
+      <hr />
+      <section>
+        <p>
+          A new CS grad from Toronto Metropolitan University. I am passionate about
+          creating beautiful and efficient software. I have experience in
+          developing web applications, writing shaders, and optimizing code for
+          GPUs. I am always looking for new opportunities to learn and grow.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <p>
+          You can find me on
+          <a href="https://www.youtube.com/@nabilnymansour">YouTube</a>,
+          <a href="https://github.com/NabilNYMansour">GitHub</a>,
+          and <a href="https://www.linkedin.com/in/nnym/">LinkedIn</a>.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <p>
+          If you would like to get in touch, you can reach me at
+          <a href="mailto:nabilnymansour@gmail.com">my Email</a>.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <p>
+          This website was built with React. You need to enable JavaScript to run it.
+        </p>
+      </section>
+    </article>
+  </noscript>
+  <div id="root"></div>
+</body>
+
 </html>

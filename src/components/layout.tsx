@@ -17,7 +17,7 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { CssBaseline, Theme, Tooltip } from "@mui/material";
 import { Outlet, Link } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
-import { darkTheme, lightTheme } from "../themes/themes";
+import { darkTheme, lightTheme, offDarkColor, offLightColor } from "../themes/themes";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { YouTube } from "@mui/icons-material";
@@ -93,11 +93,18 @@ export default function Layout() {
     setAnchorElNav(null);
   };
 
+  // Theming
+  React.useEffect(() => {
+    document.documentElement.style.setProperty("--scrollbar-track-color", offDarkColor);
+  }, []);
+
   const toggleTheme = () => {
     if (currTheme.palette.mode === "dark") {
       setCurrTheme(lightTheme);
+      document.documentElement.style.setProperty("--scrollbar-track-color", offLightColor);
     } else {
       setCurrTheme(darkTheme);
+      document.documentElement.style.setProperty("--scrollbar-track-color", offDarkColor);
     }
   };
 
