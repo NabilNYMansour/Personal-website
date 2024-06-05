@@ -100,7 +100,7 @@ export const About = () => {
       }}
     >
       <img
-        src="nabil.jpg"
+        src="nabil.webp"
         style={{ width: "250px", height: "250px", borderRadius: "10000px" }}
         loading="lazy"
         alt="Nabil Mansour"
