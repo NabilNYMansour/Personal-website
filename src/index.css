@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Caviar-Dreams';
-  src: url('/public/Caviar-Dreams.ttf.woff') format('woff'),
-    url('/public/Caviar-Dreams.ttf.svg#Caviar-Dreams') format('svg'),
-    url('/public/Caviar-Dreams.ttf.eot'),
-    url('/public/Caviar-Dreams.ttf.eot?#iefix') format('embedded-opentype');
+  src: url('/public/fonts/Caviar-Dreams.ttf.woff') format('woff'),
+    url('/public/fonts/Caviar-Dreams.ttf.svg#Caviar-Dreams') format('svg'),
+    url('/public/fonts/Caviar-Dreams.ttf.eot'),
+    url('/public/fonts/Caviar-Dreams.ttf.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }

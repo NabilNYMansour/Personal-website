@@ -16,13 +16,13 @@ export default function Project(project: iProject) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea
-        href={project.link ? project.link : project.gitLink}
+        href={project.link ? project.link : project.gitLink ? project.gitLink : "/"}
         target="_blank"
         rel="noreferrer"
       >
         {project.imgLink ?
           <>
-            {loading && <LinearProgress color="inherit"/>}
+            {loading && <LinearProgress color="inherit" />}
             <CardMedia
               component="img"
               height={loading ? 0 : 140}
@@ -42,6 +42,7 @@ export default function Project(project: iProject) {
           </Typography>
         </CardContent>
       </CardActionArea>
+
       {project.techList ? <TechList techList={project.techList} variant="outlined" /> : null}
 
       <CardActions>

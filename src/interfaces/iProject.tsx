@@ -1,11 +1,11 @@
 export interface iProject {
-    name: string;
-    desc: string;
-    link: string;
-    gitLink: string;
-    imgLink: string;
-    youtubeLink: string;
-    steamLink: string;
-    techList: string[];
-    highlight: boolean;
-  }
+  name: string;
+  desc: string;
+  imgLink: string;
+  techList: string[];
+  highlight: boolean;
+  link?: string;
+  gitLink?: string;
+  youtubeLink?: string;
+  steamLink?: string;
+}
