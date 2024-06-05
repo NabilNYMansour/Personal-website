@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Project from "../components/project";
-import { Grid } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 import { iProject } from "../interfaces/iProject";
+import CircularLoading from "../components/circularLoading";
 
 export const Projects = () => {
   const [projects, setProjects] = useState<iProject[]>([]);
@@ -22,13 +23,27 @@ export const Projects = () => {
   }, []);
 
   return (
-    <Grid container spacing={2} justifyContent="center">
-      {projects.map((project, i) => (
-        <Grid key={i} item>
-          <Project {...project} />
-        </Grid>
-      ))}
-    </Grid>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+      <h1>Projects</h1>
+      <Grid container spacing={2} justifyContent="center">
+        {loading ?
+          <CircularLoading />
+          :
+          projects.map((project, i) => (
+            <Grid key={i} item>
+              <Project {...project} />
+            </Grid>
+          ))
+        }
+      </Grid>
+    </div>
+
   );
 };
 

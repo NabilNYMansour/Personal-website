@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Project from "../components/project";
 import { iProject } from "../interfaces/iProject";
-import { Button, Container, Grid, Link } from "@mui/material";
+import { Button, CircularProgress, Container, Grid, IconButton, LinearProgress, Link } from "@mui/material";
 import TechList from "../components/techList";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link as RouterLink } from "react-router-dom";
+import CircularLoading from "../components/circularLoading";
 
 
 const technologies = ["Python", "TypeScript", "JavaScript", "C/C++", "C#", "React", "MUI",
@@ -82,7 +83,7 @@ export const About = () => {
       .then((response) => response.json())
       .then((data) => {
         setLatestProjects(data);
-      })
+      });
   };
 
   useEffect(() => {
@@ -100,9 +101,9 @@ export const About = () => {
     >
       <img
         src="nabil.jpg"
-        style={{ width: "250px", borderRadius: "10000px" }}
+        style={{ width: "250px", height: "250px", borderRadius: "10000px" }}
         loading="lazy"
-        alt="Nabil"
+        alt="Nabil Mansour"
       />
       <h1>Nabil Mansour</h1>
       <h3>
@@ -149,13 +150,13 @@ export const About = () => {
               ))
             }
           </Grid>
-          <Button style={{margin: "5px"}} variant="text" endIcon={<ArrowForwardIcon />}
+          <Button style={{ margin: "5px" }} variant="text" endIcon={<ArrowForwardIcon />}
             component={RouterLink} to={"projects"}>
             See more projects
           </Button>
         </>
       ) : (
-        "LOADING..."
+        <CircularLoading />
       )}
     </div>
   );

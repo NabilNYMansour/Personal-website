@@ -4,7 +4,7 @@ import React from 'react';
 const Contacts = ({ contacts, handleCloseNavMenu, iconSize }: {
     contacts: { link: string; title: string; icon: React.ReactElement }[];
     handleCloseNavMenu: () => void;
-    iconSize: "small"| "medium" | "large";
+    iconSize: "small" | "medium" | "large";
 }) => {
     return (
         <>
@@ -16,8 +16,7 @@ const Contacts = ({ contacts, handleCloseNavMenu, iconSize }: {
                         rel="noreferrer"
                         sx={{
                             textTransform: "none",
-                            my: iconSize === "small" ? 2 : 1,
-                            color: "inherit",
+                            my: 1,
                         }}
                         onClick={handleCloseNavMenu}
                         aria-label={contact.title}

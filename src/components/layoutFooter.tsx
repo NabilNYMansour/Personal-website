@@ -30,7 +30,7 @@ const LayoutFooter = ({ contacts, handleCloseNavMenu, currTheme }: {
                 <Box
                     sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}
                 >
-                    <Contacts contacts={contacts} handleCloseNavMenu={handleCloseNavMenu} iconSize="medium" />
+                    <Contacts contacts={contacts} handleCloseNavMenu={handleCloseNavMenu} iconSize="large" />
                 </Box>
                 <Typography
                     variant="body2"

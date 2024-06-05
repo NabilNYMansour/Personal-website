@@ -167,6 +167,7 @@ export default function Layout() {
                       component={Link}
                       to={page.link}
                       style={{ fontSize: "1rem" }}
+                      disableRipple
                     >
                       <Typography textAlign="center">{page.title}</Typography>
                     </MenuItem>

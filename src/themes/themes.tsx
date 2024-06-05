@@ -18,14 +18,19 @@ export const darkTheme: Theme = createTheme({
       textTransform: 'none',
     },
   },
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      }
+    },
+    MuiButton: {
+      defaultProps: {
+        color: 'inherit', // Set the default color for all buttons
+      },
+    },
+  }
 });
-
-darkTheme.typography.body1 = {
-  fontFamily: font,
-  [darkTheme.breakpoints.down("md")]: {
-    fontSize: "85%",
-  },
-};
 
 export const offDarkColor = "#34333C";
 
@@ -44,8 +49,18 @@ export const lightTheme: Theme = createTheme({
       textTransform: 'none'
     },
   },
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      }
+    },
+    MuiButton: {
+      defaultProps: {
+        color: 'inherit', // Set the default color for all buttons
+      },
+    },
+  }
 });
 
 export const offLightColor = "#f1f1f1";
-
-lightTheme.typography.body1 = darkTheme.typography.body1;

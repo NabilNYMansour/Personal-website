@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { iShader } from "../interfaces/iShader";
 import { CircularProgress, Grid, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import CircularLoading from "../components/circularLoading";
 
 export const Shaders = () => {
   const [shaders, setShaders] = useState<iShader[]>([]);
@@ -27,28 +28,36 @@ export const Shaders = () => {
   }, []);
 
   return (
-    <Grid container key={"main container"} justifyContent="center">
-      {iFramesLoaded < shaders.length && (
-        <div key={"loading"} style={{ position: "absolute" }}>
-          <CircularProgress />
-        </div>
-      )}
-      {shaders.map((shader, i) => (
-        <div key={i}>
-          <Grid key={i} item>
-            <iframe
-              key={i}
-              title={shader.name}
-              width={isMd ? "400" : "350"}
-              height={isMd ? "250" : "300"}
-              src={shader.codeLink}
-              onLoad={handleIfrmeLoaded}
-              hidden={iFramesLoaded < shaders.length}
-            />
-          </Grid>
-        </div>
-      ))}
-    </Grid>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+      <h1>Shaders</h1>
+      <Grid container key={"main container"} justifyContent="center">
+        {iFramesLoaded < shaders.length && (
+          <CircularLoading />
+        )}
+        {shaders.map((shader, i) => (
+          <div key={i}>
+            <Grid key={i} item>
+              <iframe
+                key={i}
+                title={shader.name}
+                width={isMd ? "400" : "350"}
+                height={isMd ? "250" : "300"}
+                src={shader.codeLink}
+                onLoad={handleIfrmeLoaded}
+                hidden={iFramesLoaded < shaders.length}
+                allowFullScreen
+              />
+            </Grid>
+          </div>
+        ))}
+      </Grid>
+    </div>
   );
 };
 
