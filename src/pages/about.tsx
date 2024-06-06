@@ -33,15 +33,15 @@ export const About = () => {
         onLoad={() => setLoadingImg(false)}
       />
       <h1>Nabil Mansour</h1>
-      <h3>
-        <ProfessionTyping />
-      </h3>
+      <h2>
+        <ProfessionTyping professions={["Software Engineer", "Web Developer", "Graphics Programmer", "Content Creator"]} />
+      </h2>
       <Container maxWidth="sm">
         <div>
           A {" "}
-          <Link href="https://www.torontomu.ca" target="_blank" rel="noreferrer">
+          <a href="https://www.torontomu.ca" target="_blank" rel="noreferrer">
             TMU
-          </Link>{" "}
+          </a>{" "}
           (formerly Ryerson) CS new grad.
         </div>
         <br />
